@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.fondo {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: url('img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*
+No se notaba bien las letras por eso pongo esta capa que son dos circulos sobre el fondo para resaltar el color blanco de las letras.
+*/
+.fondo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 20%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(101, 67, 33, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    max-width: 900px;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.tagline em {
+    font-style: italic;
+}
+
+nav {
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+.redes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.redes a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.redes a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}

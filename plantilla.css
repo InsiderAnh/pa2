@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+nav {
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease;
+}
+
+nav a.actual::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+.contenedor-galeria {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+}
+
+.imagen-galeria {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-galeria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.imagen-galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.imagen-galeria p {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.blog-imagen {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    display: block;
+    padding: 0 20px;
+}
+
+.blog-imagen img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.cabecera {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecera h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.videos p {
+    margin-inline: 15%;
+}
+
+.mi-informacion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.mi-informacion-foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ddd;
+}
+
+.mi-informacion-detalles {
+    text-align: left;
+}
+
+.mi-informacion-nombre {
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.mi-informacion-rol {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.fecha-articulo {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.contenido-articulo {
+    text-align: justify;
+    font-size: 1em;
+    color: #555;
+}
+
+.contenido-articulo p {
+    margin-bottom: 20px;
+}
+
+.seccion-importante {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.coffee-icon {
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.redes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.redes a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(22, 17, 17, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.redes a:hover {
+    background: rgba(5, 1, 1, 0.3);
+    transform: translateY(-3px);
+}
+
+#video-responsive {
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    padding-bottom: 56.25% /*relacion: 9/16*/;
+    height: 0;
+}
+
+#video-responsive iframe, #video-responsive video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+}
