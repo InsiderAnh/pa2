@@ -1,0 +1,138 @@
+.contenedor-nosotros {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "banner banner"
+        "contenido imagen"
+        "equipo equipo";
+    gap: 30px;
+}
+
+.banner-nosotros {
+    grid-area: banner;
+    background: #1a2332;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 8px;
+}
+
+.banner-nosotros h2 {
+    font-size: 3em;
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.contenido-principal {
+    grid-area: contenido;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contenido-principal h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #333;
+}
+
+.contenido-principal p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.imagen-lateral {
+    grid-area: imagen;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imagen-lateral img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.seccion-equipo {
+    grid-area: equipo;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.seccion-equipo h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    font-weight: normal;
+    color: #333;
+}
+
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.miembro-equipo {
+    text-align: center;
+}
+
+.miembro-equipo img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.miembro-equipo h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.miembro-equipo p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+@media (max-width: 968px) {
+    .contenedor-nosotros {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "banner"
+            "contenido"
+            "imagen"
+            "equipo";
+    }
+
+    .grid-equipo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-equipo {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-nosotros h2 {
+        font-size: 2em;
+    }
+}
